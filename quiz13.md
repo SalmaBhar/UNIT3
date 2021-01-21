@@ -1,6 +1,6 @@
 # Quiz 13
 ![alt text](quiz13.jpg) <br>
-![alt text](Q13flow.png) <br>
+![alt text](Q13flow.jpg) <br>
 ![alt text](Q13test.png) <br>
 ```py
 # Code definition of function
