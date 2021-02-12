@@ -1,3 +1,6 @@
+# Lunar New Year HW - DBs
+![alt text](LunarERdiagram.jpg) <br>
+**Fig. 1:**ER diagram of the database showing the table StudentInfo and its 6 attributes
 ```sql
 CREATE TABLE IF NOT EXISTS  StudentInfo(
     id integer primary key autoincrement not null,
