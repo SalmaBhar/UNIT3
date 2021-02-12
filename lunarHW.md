@@ -1,6 +1,7 @@
 # Lunar New Year HW - DBs
 ![alt text](LunarERdiagram.jpg) <br>
 **Fig. 1:** ER diagram of the database showing the table StudentInfo and its 6 attributes <br>
+The following is the SQL script to create the database and adding 3 sample users: <br>
 ```sql
 CREATE TABLE IF NOT EXISTS  StudentInfo(
     id integer primary key autoincrement not null,
