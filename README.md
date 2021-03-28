@@ -2,12 +2,14 @@
 # Diary App
 ## Criteria A: Planning
 ### Context of the problem
-This project is a Diary App. It allows the user to keep a personal digital diary on their phone through an app. The user keeps their entries secure by creating an account and accessing their personal portal which allows them to enter and read diaries according to the date. <br>
+Many people like to keep diaries to document important events of their lives. However, paper diaries are old-school and take a lot of storage space [1].This project is a Diary App. It allows the user to keep a personal digital diary on their phone through an app. The user keeps their entries secure by creating an account and accessing their personal portal which allows them to enter and read diaries according to the date. <br>
+
+[1] Adminassistance. “What Type Of Diary Is Better To Use?” Admin Assistance, 16 Sept. 2020, www.adminassistance.co.uk/diaries-online-vs-paperback.  <br>
 
 ### Justification of the solution
-We will create an app program using Python as a programming language on the programming software PyCharm that is available by our school. We will be using the open source KivyMD in order to build our app interface and components. In fact, KivyMD is one of the most useful sources that makes app development on Python much easier and efficient [1]. We will also use SQL programming language to build 2 databases for the app: a database to store the user's account information and a database to store the journal entries of each user. The app will have 4 main screens: a registration screen, login screen, diary entries screen and a diary entries view screen. <br>
+We will create an app program using Python as a programming language on the programming software PyCharm that is available by our school. We will be using the open source KivyMD in order to build our app interface and components. In fact, KivyMD is one of the most useful sources that makes app development on Python much easier and efficient [2]. We will also use SQL programming language to build 2 databases for the app: a database to store the user's account information and a database to store the journal entries of each user. The app will have 4 main screens: a registration screen, login screen, diary entries screen and a diary entries view screen. <br>
 
-[1] Gupta, Kaustubh. “Building Android Apps With Python: Part -3.” Medium, Towards Data Science, 4 Dec. 2020, towardsdatascience.com/building-android-apps-with-python-part-3-89a455ee7f7c. 
+[2] Gupta, Kaustubh. “Building Android Apps With Python: Part -3.” Medium, Towards Data Science, 4 Dec. 2020, towardsdatascience.com/building-android-apps-with-python-part-3-89a455ee7f7c. <br>
 
 T.E.L.O.S. Study: <br>
 T-Technical-Is the project technically possible? We dispose of a computer and PyCharm software for Python and KivyMD code. All technical necessities for this project are satisfied. <br>
