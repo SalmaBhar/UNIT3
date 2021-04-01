@@ -34,10 +34,10 @@ I started by drawing the following system diagram in class: <br>
 **Fig. 1:** System Diagram of the project <br>
 ### Initial Sketches
 These are some initial sketches of each screen of the app. <br>
-![alt text]() <br>
+![alt text](sketchesapp.jpg) <br>
 **Fig. 2:** Initial Paper Sketches of the App <br>
 These are the diagrams for each of the 2 databases of the app. <br>
-![alt text]() <br>
+![alt text](erapp.jpg) <br>
 **Fig. 3:** Diagrams of our 2 databases <br>
 ## Criteria C: Development
 We ended up with the following Python code which will be run on PyCharm: <br>
