@@ -39,7 +39,7 @@ These are the ER diagrams for the 2 databases of the app. <br>
 **Fig. 2:** ER Diagrams of our 2 databases <br>
 ### User Interface
 This is the Home Login Screen and Register Screen of the app. <br>
-![alt text]() <br>
+![alt text](loginregisterscreen.png) <br>
 **Fig. 3:** Login and Register Screens <br>
 <br>
 <br>
@@ -62,6 +62,9 @@ class MainApp(MDApp):
         return
 
 class DiaryScreen(MDScreen):
+    pass
+
+class EntryScreen(MDScreen):
     def new_entry(self):
         date = self.ids.date_input.text
         entry = self.ids.entry_input.text
@@ -123,11 +126,11 @@ class ButtonLabel(ButtonBehavior,MDLabel):
     pass
 
 MainApp().run()
+
 ``` 
-The following is the code in a text file to customize the app components: 
-This is the code for our 2 databases:
+The following is the KivyMD code file to customize the app components: 
 ```py
-creenManager:
+ScreenManager:
     id: scr_manager
 
     LoginScreen:
@@ -136,10 +139,46 @@ creenManager:
     RegisterScreen:
         name:'RegisterScreen'
 
-    DiaryScreen:
+    EntryScreen:
+        name:'EntryScreen'
+
+    EntryScreen:
         name:'DiaryScreen'
 
 <DiaryScreen>:
+    BoxLayout:
+        orientation:'vertical'
+        size: root.height, root.width
+
+        FitImage:
+            source: 'diary.jpg'
+
+    MDCard:
+        size_hint: 0.5, 0.8
+        elevation: 10
+        pos_hint: {'center_x':0.5, 'center_y':0.5}
+        orientation: 'vertical'
+        padding: dp(40)
+        spacing: dp(40)
+
+        MDBoxLayout:
+            id: content #id or name
+            adaptive_height: True
+            orientation: 'vertical'
+            padding: dp(30)
+            spacing: dp(20)
+
+        MDLabel:
+            text: 'My Diary'
+            font_style: 'H3'
+            halign: 'center'
+
+        MDRaisedButton:
+            text: 'Add New Entry'
+            on_press:
+                root.parent.current = 'EntryScreen'
+
+<EntryScreen>:
     BoxLayout:
         orientation:'vertical'
         size: root.height, root.width
@@ -238,7 +277,7 @@ creenManager:
             MDBoxLayout:
                 adaptive_height: True
                 ButtonLabel:
-                    text: 'Access Diary'
+                    text: 'Diary'
                     on_press:
                         root.parent.current = 'DiaryScreen'
 
@@ -300,6 +339,7 @@ creenManager:
                     text: 'Register'
                     on_press:
                         root.parent.current = 'RegisterScreen'
+
 ```
 This is the SQLite code for our 2 databases:
 ```py
