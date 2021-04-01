@@ -28,17 +28,24 @@ S-Scheduling- Can the project be done in time? We are given 3 weeks to complete 
 | Crit.1. The product contains at least 2 databases.               | The product contains 2 databases: 1 database to store user account information and 1 database to store each user's diary entries.                                                              | YES  |
 | Crit.2. The product uses Object Oriented Programming.               | The product uses OOP. It contains LoginScreen class, RegisterScreen and DiaryScreen class.                                                              | YES  |
 | Crit.3. The product is free of bugs and runs correctly on a phone. | The product has been verified to run correctly and does not show any errors.                                                       | YES  |
-### System Diagram
-I started by drawing the following system diagram in class: <br>
-![alt text]() <br>
-**Fig. 1:** System Diagram of the project <br>
 ### Initial Sketches
 These are some initial sketches of each screen of the app. <br>
 ![alt text](sketchesapp.jpg) <br>
-**Fig. 2:** Initial Paper Sketches of the App <br>
-These are the diagrams for each of the 2 databases of the app. <br>
+**Fig. 1:** Initial Paper Sketches of the App <br>
+<br>
+<br>
+These are the ER diagrams for the 2 databases of the app. <br>
 ![alt text](erapp.jpg) <br>
-**Fig. 3:** Diagrams of our 2 databases <br>
+**Fig. 2:** ER Diagrams of our 2 databases <br>
+### User Interface
+This is the Home Login Screen and Register Screen of the app. <br>
+![alt text]() <br>
+**Fig. 3:** Login and Register Screens <br>
+<br>
+<br>
+This is the Diary Screen which shows all the entries of the user. When we click on the and Register Screen of the app. <br>
+![alt text]() <br>
+**Fig. 3:** Login and Register Screens <br>
 ## Criteria C: Development
 We ended up with the following Python code which will be run on PyCharm: <br>
 ```py
