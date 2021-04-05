@@ -50,6 +50,9 @@ This is the Home Login Screen and Register Screen of the app. <br>
 This is the Diary Entries Screen which allows the user to enter their journal entries after they have logged-in. <br>
 ![alt text](entryscreen.png) <br>
 **Fig. 5:** Diary entries Screen <br>
+The following are the 2 database tables with some data in them. The app allows us to write and read from them using the sign-in/register and diary entry functions. <br>
+![alt text](databasetables.png) <br>
+**Fig. 6:** 2 database tables of the app <br>
 ## Criteria C: Development
 We ended up with the following Python code which will be run on PyCharm: <br>
 ```py
@@ -59,14 +62,17 @@ from kivymd.uix.screen import MDScreen
 from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.label import MDLabel
 
+
 class MainApp(MDApp):
     def build(self):
         self.theme_cls.primary_palette = 'Pink'
 
         return
 
+
 class DiaryScreen(MDScreen):
     pass
+
 
 class EntryScreen(MDScreen):
     def new_entry(self):
@@ -74,13 +80,13 @@ class EntryScreen(MDScreen):
         entry = self.ids.entry_input.text
 
         conn = sqlite3.connect("app.sqlite")
-        sql = f"insert into diary(date, entry) values ('{date}'" \
-              f"'{entry}')"
+        sql = f"insert into diary(date, entry) values ('{date}', '{entry}');"
         cur = conn.cursor()
         cur.execute(sql)
         print("New Entry Created")
         conn.commit()
         conn.close()
+
 
 class LoginScreen(MDScreen):
     def try_login(self):
@@ -89,48 +95,45 @@ class LoginScreen(MDScreen):
         password = self.ids.password_input.text
 
         conn = sqlite3.connect('app.sqlite')
-        sql = f"select * from users where email='{email}' and password='psw'"
+        sql = f"select * from users where email='{email}' and password='{password}';"
         cur = conn.cursor()
         cur.execute(sql)
         result = cur.fetchone()
         conn.close()
-
+        print(result)
         id, password, email = result
-        print(f"login successful for user with id {id} and email")
+        print(f"login successful for user with id {id} and email {email}")
+
 
 class RegisterScreen(MDScreen):
     def try_register(self):
         email = self.ids.email_input.text
-        psw = self.ids.password_input.text
-        psw_check = self.ids.password_input.text
-        if psw != psw_check:
+        password = self.ids.password_input.text
+        password_check = self.ids.password_input.text
+        if password != password_check:
             print("Passwords do not match")
         else:
             # check the user is not registered already
             conn = sqlite3.connect('app.sqlite')
-            sql = f"select * from users where email='{email}'"
+            sql = f"select * from users where email='{email}' and password='{password}';"
             cur = conn.cursor()
             cur.execute(sql)
             result = cur.fetchone()
 
-            if result:
-                # there is already a user with this email
-                print("Email already registered")
-            else:
-                conn = sqlite3.connect("app.sqlite")
-                sql = f"insert into users(email, password) values ('{email}'" \
-                      f"'{psw}')"
-                cur = conn.cursor()
-                cur.execute(sql)
-                print("User created")
-                conn.commit()
-                conn.close()
+            conn = sqlite3.connect("app.sqlite")
+            sql = f"insert into users(email, password) values ('{email}', '{password}');"
+            cur = conn.cursor()
+            cur.execute(sql)
+            print("User created")
+            conn.commit()
+            conn.close()
 
-class ButtonLabel(ButtonBehavior,MDLabel):
+
+class ButtonLabel(ButtonBehavior, MDLabel):
     pass
 
-MainApp().run()
 
+MainApp().run()
 ``` 
 The following is the KivyMD code file to customize the app components: 
 ```py
@@ -226,7 +229,8 @@ ScreenManager:
             text: 'Save New Entry'
             on_release:
                 root.new_entry()
-
+            on_press:
+                root.parent.current = 'DiaryScreen'
 
 <RegisterScreen>:
     BoxLayout:
@@ -343,6 +347,7 @@ ScreenManager:
                     text: 'Register'
                     on_press:
                         root.parent.current = 'RegisterScreen'
+
 
 ```
 This is the SQLite code for our 2 databases:
