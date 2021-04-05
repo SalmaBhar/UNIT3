@@ -368,7 +368,6 @@ CREATE TABLE IF NOT EXISTS diary(
 )
 ```
 ## Criteria D: Functionality
-This video demonstrates the functionality of the final app: <br>
-Video Link: TBD
+The functionality of the app has been presented in class.
 ## Criteria E: Evaluation
 The app functions pretty well. The database portion is functionning successfully. When you register, it writes your email and associated password in the users database table so that next time when you sign-in, it checks that your account information is available and links you to the diary screen. The diary screen allows you to enter a journal entry with the date associated. However, I struggled to make the entries appear in another screen. The only way to access previous entries is to look at the diary database table which is quite inconvenient and has to be improved. Overall, the success criteria has been met although the app might need some improvements. It is generally a good introduction and practise of app development using KivyMD.
