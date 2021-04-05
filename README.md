@@ -6,6 +6,10 @@ Many people like to keep diaries to document important events of their lives. Ho
 
 [1] Adminassistance. “What Type Of Diary Is Better To Use?” Admin Assistance, 16 Sept. 2020, www.adminassistance.co.uk/diaries-online-vs-paperback.  <br>
 
+To support this idea, I received the following request from my roomate asking about an app to record her diary entries since her physical journal is taking too much space in her small dorm room. The screenshot of this conversation is found below: <br>
+![alt text](screenshot.jpg) <br> 
+**Fig. 1:** Customer requests conversation proof <br>
+
 ### Justification of the solution
 We will create an app program using Python as a programming language on the programming software PyCharm that is available by our school. We will be using the open source KivyMD in order to build our app interface and components. In fact, KivyMD is one of the most useful sources that makes app development on Python much easier and efficient [2]. We will also use SQL programming language to build 2 databases for the app: a database to store the user's account information and a database to store the journal entries of each user. The app will have 4 main screens: a registration screen, login screen, diary entries screen and a diary entries view screen. <br>
 
@@ -31,21 +35,19 @@ S-Scheduling- Can the project be done in time? We are given 3 weeks to complete 
 ### Initial Sketches
 These are some initial sketches of each screen of the app. <br>
 ![alt text](sketchesapp.jpg) <br>
-**Fig. 1:** Initial Paper Sketches of the App <br>
-<br>
+**Fig. 2:** Initial Paper Sketches of the App <br>
 <br>
 These are the ER diagrams for the 2 databases of the app. <br>
 ![alt text](erapp.jpg) <br>
-**Fig. 2:** ER Diagrams of our 2 databases <br>
+**Fig. 3:** ER Diagrams of our 2 databases <br>
 ### User Interface
 This is the Home Login Screen and Register Screen of the app. <br>
 ![alt text](loginregisterscreen.png) <br>
-**Fig. 3:** Login and Register Screens <br>
+**Fig. 4:** Login and Register Screens <br>
 <br>
-<br>
-This is the Diary Screen which shows all the entries of the user. When we click on the and Register Screen of the app. <br>
-![alt text]() <br>
-**Fig. 3:** Login and Register Screens <br>
+This is the Diary Entries Screen which allows the user to enter their journal entries after they have logged-in. <br>
+![alt text](entryscreen.png) <br>
+**Fig. 5:** Diary entries Screen <br>
 ## Criteria C: Development
 We ended up with the following Python code which will be run on PyCharm: <br>
 ```py
