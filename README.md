@@ -51,6 +51,7 @@ This is the Diary Entries Screen which allows the user to enter their journal en
 ![alt text](entryscreen.png) <br>
 **Fig. 5:** Diary entries Screen <br>
 The following are the 2 database tables with some data in them. The app allows us to write and read from them using the sign-in/register and diary entry functions. <br>
+<br>
 ![alt text](databasetables.png) <br>
 **Fig. 6:** 2 database tables of the app <br>
 ## Criteria C: Development
