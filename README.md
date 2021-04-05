@@ -23,23 +23,25 @@ O-Operational- How will the current operations support the change? The project w
 S-Scheduling- Can the project be done in time? We are given 3 weeks to complete this project and the tasks have been regularly distributed to assure that it is completed by Thursday, April 1st, 2021. <br>
 ### Criteria for success
 1. The product contains at least 2 databases. <br>
-2. The product uses Object Oriented Programming. <br>
-3. The product is free of bugs and runs correctly on a phone. <br>
+2. The product contains a login feature. <br>
+3. The product contains a register feature. <br>
+4. The product should have a pink theme. <br>
 ## Criteria B: Design
 ### Test Plan 
 |                                       Test                                       |                                                           Expected Outcome                                                           | Met? |
 |:--------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------:|:----:|
-| Crit.1. The product contains at least 2 databases.               | The product contains 2 databases: 1 database to store user account information and 1 database to store each user's diary entries.                                                              | YES  |
-| Crit.2. The product uses Object Oriented Programming.               | The product uses OOP. It contains LoginScreen class, RegisterScreen and DiaryScreen class.                                                              | YES  |
-| Crit.3. The product is free of bugs and runs correctly on a phone. | The product has been verified to run correctly and does not show any errors.                                                       | YES  |
+| Crit.1. The product contains at least 2 database tables.               | The product contains 2 database tables: 1 database to store user account information and 1 database to store each user's diary entries.                                                              | YES  |
+| Crit.2. The product contains a login feature.               | When you open the app, you can enter your email and password in the allocated fields and you get signed in when you click the "sign in" button.                                                              | YES  |
+| Crit.3. The product contains a register feature. | You can enter an email and password in the allocated fields and your account gets added to the users database when you click the "register" button.                                                       | YES  |
+| Crit.4. The product should have a pink theme. | The app's theme has been set at the colour pink which is visible in the background and buttons.                                                       | YES  |
 ### Initial Sketches
-These are some initial sketches of each screen of the app. <br>
+I started by making some initial sketches of each screen of the app. It shows the components and its location on each screen. These sketches will be later used as a refrence when coding the app's screens. <br>
 ![alt text](sketchesapp.jpg) <br>
 **Fig. 2:** Initial Paper Sketches of the App <br>
 <br>
-These are the ER diagrams for the 2 databases of the app. <br>
+The app contains 2 database tables: the users table to store the users' accounts information and the diary table to store the diary entries of each user. These are the Entity Relationships (ER) diagrams for the 2 database tables of the app. <br>
 ![alt text](erapp.jpg) <br>
-**Fig. 3:** ER Diagrams of our 2 databases <br>
+**Fig. 3:** ER Diagrams of our 2 database tables <br>
 ### User Interface
 This is the Home Login Screen and Register Screen of the app. <br>
 ![alt text](loginregisterscreen.png) <br>
