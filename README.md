@@ -7,8 +7,6 @@ Many people like to keep diaries to document important events of their lives. Ho
 [1] Adminassistance. “What Type Of Diary Is Better To Use?” Admin Assistance, 16 Sept. 2020, www.adminassistance.co.uk/diaries-online-vs-paperback.  <br>
 
 To support this idea, I received the following request from my roomate asking about an app to record her diary entries since her physical journal is taking too much space in her small dorm room. The screenshot of this conversation is found below: <br>
-![alt text](screenshot.jpg) <br> 
-**Fig. 1:** Customer requests conversation proof <br>
 
 ### Justification of the solution
 We will create an app program using Python as a programming language on the programming software PyCharm that is available by our school. We will be using the open source KivyMD in order to build our app interface and components. In fact, KivyMD is one of the most useful sources that makes app development on Python much easier and efficient [2]. We will also use SQL programming language to build 2 databases for the app: a database to store the user's account information and a database to store the journal entries of each user. The app will have 4 main screens: a registration screen, login screen, diary entries screen and a diary entries view screen. <br>
@@ -371,3 +369,7 @@ CREATE TABLE IF NOT EXISTS diary(
 The functionality of the app has been presented in class.
 ## Criteria E: Evaluation
 The app functions pretty well. The database portion is functionning successfully. When you register, it writes your email and associated password in the users database table so that next time when you sign-in, it checks that your account information is available and links you to the diary screen. The diary screen allows you to enter a journal entry with the date associated. However, I struggled to make the entries appear in another screen. The only way to access previous entries is to look at the diary database table which is quite inconvenient and has to be improved. Overall, the success criteria has been met although the app might need some improvements. It is generally a good introduction and practise of app development using KivyMD.
+
+## Appendix
+![alt text](screenshot.jpg) <br> 
+**Fig. 1:** Customer requests conversation proof <br>
