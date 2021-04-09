@@ -20,7 +20,7 @@ L-Legal- Is the project legal? The project is completely legal as the 1947 Japan
 O-Operational- How will the current operations support the change? The project will operate on a computer and displayed on a phone. The process does not have any errors and is perfectly operational. <br>
 S-Scheduling- Can the project be done in time? We are given 3 weeks to complete this project and the tasks have been regularly distributed to assure that it is completed by Thursday, April 1st, 2021. <br>
 ### Criteria for success
-1. The product should allow me to store my account info and diary entries. <br>
+1. The product should allow the customer to store their account info and diary entries. <br>
 2. The product contains a login feature. <br>
 3. The product contains a register feature. <br>
 4. The product should have a pink theme. <br>
@@ -28,7 +28,7 @@ S-Scheduling- Can the project be done in time? We are given 3 weeks to complete 
 ### Test Plan 
 |                                       Test                                       |                                                           Expected Outcome                                                           | Met? |
 |:--------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------:|:----:|
-| Crit.1. The product contains at least 2 database tables.               | The product contains 2 database tables: 1 database to store user account information and 1 database to store each user's diary entries.                                                              | YES  |
+| Crit.1. The product should allow the customer to store their account info and diary entries.               | The product contains 2 database tables: 1 database to store user account information and 1 database to store each user's diary entries.                                                              | YES  |
 | Crit.2. The product contains a login feature.               | When you open the app, you can enter your email and password in the allocated fields and you get signed in when you click the "sign in" button.                                                              | YES  |
 | Crit.3. The product contains a register feature. | You can enter an email and password in the allocated fields and your account gets added to the users database when you click the "register" button.                                                       | YES  |
 | Crit.4. The product should have a pink theme. | The app's theme has been set at the colour pink which is visible in the background and buttons.                                                       | YES  |
