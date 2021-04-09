@@ -121,8 +121,17 @@ class RegisterScreen(MDScreen):
 ## Criteria D: Functionality
 The functionality of the app has been presented in class.
 ## Criteria E: Evaluation
-### 1. Alpha Testing:
+As a reminder, this is the criteria for success of this app: <br>
+1. The product should allow the customer to store their account info and diary entries. <br>
+2. The product contains a login feature. <br>
+3. The product contains a register feature. <br>
+4. The product should have a pink theme. <br>
 
+### 1. Alpha Testing:
+- Crit.1. The product should allow the customer to store their account info and diary entries. --> The product contains 2 database tables: 1 database to store user account information and 1 database to store each user's diary entries. --> PASSED <br>
+- Crit.2. The product contains a login feature. --> When you open the app, you can enter your email and password in the allocated fields and you get signed in when you click the "sign in" button. --> PASSED <br>
+- Crit.3. The product contains a register feature. --> You can enter an email and password in the allocated fields and your account gets added to the users database when you click the "register" button. --> PASSED <br>
+- Crit.4.The product should have a pink theme. --> The app's theme has been set at the colour pink which is visible in the background and buttons. --> PASSED <br>
 ### 2. Beta Testing:
 
 ### 3. Unit Testing:
