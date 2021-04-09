@@ -46,7 +46,7 @@ This is the Home Login Screen and Register Screen of the app. <br>
 **Fig. 3:** Login and Register Screens <br>
 <br>
 This is the Diary Entries Screen which allows the user to enter their journal entries after they have logged-in. <br>
-![alt text](entryscreen.png) <br>
+![alt text]() <br>
 **Fig. 4:** Diary entries Screens <br>
 <br>
 The following are the 2 database tables with some data in them. The app allows us to write and read from them using the sign-in/register and diary entry functions. <br>
@@ -67,7 +67,6 @@ class MainApp(MDApp):
         self.theme_cls.primary_palette = 'Pink'
 
         return
-
 
 class DiaryScreen(MDScreen):
     pass
@@ -102,6 +101,7 @@ class LoginScreen(MDScreen):
         print(result)
         id, password, email = result
         print(f"login successful for user with id {id} and email {email}")
+        self.parent.ids.diary.ids.test_label.text = f"{email}"
 
 
 class RegisterScreen(MDScreen):
@@ -133,6 +133,7 @@ class ButtonLabel(ButtonBehavior, MDLabel):
 
 
 MainApp().run()
+
 ``` 
 The following is the KivyMD code file to customize the app components: 
 ```py
@@ -148,7 +149,8 @@ ScreenManager:
     EntryScreen:
         name:'EntryScreen'
 
-    EntryScreen:
+    DiaryScreen:
+        id: diary
         name:'DiaryScreen'
 
 <DiaryScreen>:
@@ -175,6 +177,7 @@ ScreenManager:
             spacing: dp(20)
 
         MDLabel:
+            id: test_label
             text: 'My Diary'
             font_style: 'H3'
             halign: 'center'
@@ -348,22 +351,6 @@ ScreenManager:
                         root.parent.current = 'RegisterScreen'
 
 
-```
-This is the SQLite code for our 2 databases:
-```py
-# User Information Database
-CREATE TABLE IF NOT EXISTS users(
-    id       integer primary key autoincrement,
-    email    varchar(250),
-    password varchar(40)
-);
-
-# Diary Entries Database
-CREATE TABLE IF NOT EXISTS diary(
-    id integer primary key autoincrement,
-    date Date,
-    entry varchar(200)
-)
 ```
 ## Criteria D: Functionality
 The functionality of the app has been presented in class.
