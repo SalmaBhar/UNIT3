@@ -53,39 +53,27 @@ The following are the 2 database tables with some data in them. The app allows u
 ![alt text](databasetables.png) <br>
 **Fig. 5:** 2 database tables of the app <br>
 ## Criteria C: Development
-We ended up with the following Python code which will be run on PyCharm: <br>
+The following is the KivyMD code file to create the 4 needed screens of the app: 
 ```py
-import sqlite3
-from kivymd.app import MDApp
-from kivymd.uix.screen import MDScreen
-from kivy.uix.behaviors import ButtonBehavior
-from kivymd.uix.label import MDLabel
+ScreenManager:
+    id: scr_manager
 
+    LoginScreen:
+        name:'LoginScreen'
 
-class MainApp(MDApp):
-    def build(self):
-        self.theme_cls.primary_palette = 'Pink'
+    RegisterScreen:
+        name:'RegisterScreen'
 
-        return
+    EntryScreen:
+        name:'EntryScreen'
 
-class DiaryScreen(MDScreen):
-    pass
-
-
-class EntryScreen(MDScreen):
-    def new_entry(self):
-        date = self.ids.date_input.text
-        entry = self.ids.entry_input.text
-
-        conn = sqlite3.connect("app.sqlite")
-        sql = f"insert into diary(date, entry) values ('{date}', '{entry}');"
-        cur = conn.cursor()
-        cur.execute(sql)
-        print("New Entry Created")
-        conn.commit()
-        conn.close()
-
-
+    DiaryScreen:
+        id: diary
+        name:'DiaryScreen'
+```
+### Login Screen
+The Log-in screen is the first and default screen of the app.The following is the Python code for the login function which is run on PyCharm: <br>
+```py
 class LoginScreen(MDScreen):
     def try_login(self):
         email = self.ids.email_input.text
@@ -102,8 +90,10 @@ class LoginScreen(MDScreen):
         id, password, email = result
         print(f"login successful for user with id {id} and email {email}")
         self.parent.ids.diary.ids.test_label.text = f"{email}"
-
-
+``` 
+### Register Screen
+If the user does not have an account, they will have to register for an account. The following is the Python code for the register function which is run on PyCharm: <br>
+```py
 class RegisterScreen(MDScreen):
     def try_register(self):
         email = self.ids.email_input.text
@@ -126,235 +116,18 @@ class RegisterScreen(MDScreen):
             print("User created")
             conn.commit()
             conn.close()
-
-
-class ButtonLabel(ButtonBehavior, MDLabel):
-    pass
-
-
-MainApp().run()
-
 ``` 
-The following is the KivyMD code file to customize the app components: 
-```py
-ScreenManager:
-    id: scr_manager
 
-    LoginScreen:
-        name:'LoginScreen'
-
-    RegisterScreen:
-        name:'RegisterScreen'
-
-    EntryScreen:
-        name:'EntryScreen'
-
-    DiaryScreen:
-        id: diary
-        name:'DiaryScreen'
-
-<DiaryScreen>:
-    BoxLayout:
-        orientation:'vertical'
-        size: root.height, root.width
-
-        FitImage:
-            source: 'diary.jpg'
-
-    MDCard:
-        size_hint: 0.5, 0.8
-        elevation: 10
-        pos_hint: {'center_x':0.5, 'center_y':0.5}
-        orientation: 'vertical'
-        padding: dp(40)
-        spacing: dp(40)
-
-        MDBoxLayout:
-            id: content #id or name
-            adaptive_height: True
-            orientation: 'vertical'
-            padding: dp(30)
-            spacing: dp(20)
-
-        MDLabel:
-            id: test_label
-            text: 'My Diary'
-            font_style: 'H3'
-            halign: 'center'
-
-        MDRaisedButton:
-            text: 'Add New Entry'
-            on_press:
-                root.parent.current = 'EntryScreen'
-
-<EntryScreen>:
-    BoxLayout:
-        orientation:'vertical'
-        size: root.height, root.width
-
-        FitImage:
-            source: 'diary.jpg'
-
-    MDCard:
-        size_hint: 0.5, 0.8
-        elevation: 10
-        pos_hint: {'center_x':0.5, 'center_y':0.5}
-        orientation: 'vertical'
-        padding: dp(40)
-        spacing: dp(40)
-
-        MDBoxLayout:
-            id: content #id or name
-            adaptive_height: True
-            orientation: 'vertical'
-            padding: dp(30)
-            spacing: dp(20)
-
-        MDLabel:
-            text: 'New Entry'
-            font_style: 'H3'
-            halign: 'center'
-
-        MDTextField:
-            id: date_input
-            hint_text: 'Date'
-            icon_left: 'date'
-            required: True
-
-        MDTextField:
-            id: entry_input
-            hint_text: 'Entry'
-            icon_left: 'entry'
-            required: True
-
-        MDRaisedButton:
-            text: 'Save New Entry'
-            on_release:
-                root.new_entry()
-            on_press:
-                root.parent.current = 'DiaryScreen'
-
-<RegisterScreen>:
-    BoxLayout:
-        orientation:'vertical'
-        size: root.height, root.width
-
-        FitImage:
-            source: 'diary.jpg'
-
-    MDCard:
-        size_hint: 0.5, 0.8
-        elevation: 10
-        pos_hint: {'center_x':0.5, 'center_y':0.5}
-        orientation: 'vertical'
-
-        MDBoxLayout:
-            id: content #id or name
-            adaptive_height: True
-            orientation: 'vertical'
-            padding: dp(30)
-            spacing: dp(20)
-
-            MDLabel:
-                text: 'REGISTER'
-                font_style: 'H3'
-                halign: 'center'
-
-            MDTextField:
-                id: email_input
-                hint_text: 'Email'
-                icon_left: 'email'
-                helper_text: 'Invalid email'
-                helper_text_mode:'on_error'
-                required: True
-
-            MDTextField:
-                id: password_input
-                hint_text: 'Password'
-                icon_left: 'key'
-                helper_text: 'Invalid password'
-                helper_text_mode:'on_error'
-                required: True
-                password: True
-                password_mask: '*'
-
-            MDRaisedButton:
-                text: 'Register'
-                on_release:
-                    root.try_register()
-                    root.parent.current = 'LoginScreen'
-
-            MDBoxLayout:
-                adaptive_height: True
-                ButtonLabel:
-                    text: 'Diary'
-                    on_press:
-                        root.parent.current = 'DiaryScreen'
-
-
-<LoginScreen>:
-    BoxLayout:
-        orientation:'vertical'
-        size: root.height, root.width
-
-        FitImage:
-            source: 'diary.jpg'
-
-    MDCard:
-        size_hint: 0.5, 0.8
-        elevation: 10
-        pos_hint: {'center_x':0.5, 'center_y':0.5}
-        orientation: 'vertical'
-
-        MDBoxLayout:
-            id: content #id or name
-            adaptive_height: True
-            orientation: 'vertical'
-            padding: dp(30)
-            spacing: dp(20)
-
-            MDLabel:
-                text: 'MyDiary'
-                font_style: 'H3'
-                halign: 'center'
-                font_size: '50sp'
-
-            MDTextField:
-                id: email_input
-                hint_text: 'Email'
-                icon_left: 'email'
-                helper_text: 'Invalid email'
-                helper_text_mode:'on_error'
-                required: True
-
-            MDTextField:
-                id: password_input
-                hint_text: 'Password'
-                icon_left: 'key'
-                helper_text: 'Invalid password'
-                helper_text_mode:'on_error'
-                required: True
-                password: True
-                password_mask: '*'
-
-            MDRaisedButton:
-                text: 'Log in'
-                on_release:
-                    root.try_login()
-                    root.parent.current = 'DiaryScreen'
-
-            MDBoxLayout:
-                adaptive_height: True
-                ButtonLabel:
-                    text: 'Register'
-                    on_press:
-                        root.parent.current = 'RegisterScreen'
-
-
-```
 ## Criteria D: Functionality
 The functionality of the app has been presented in class.
 ## Criteria E: Evaluation
+### 1. Alpha Testing:
+
+### 2. Beta Testing:
+
+### 3. Unit Testing:
+
+### 4. Personal Reflection:
 The app functions pretty well. The database portion is functionning successfully. When you register, it writes your email and associated password in the users database table so that next time when you sign-in, it checks that your account information is available and links you to the diary screen. The diary screen allows you to enter a journal entry with the date associated. However, I struggled to make the entries appear in another screen. The only way to access previous entries is to look at the diary database table which is quite inconvenient and has to be improved. Overall, the success criteria has been met although the app might need some improvements. It is generally a good introduction and practise of app development using KivyMD.
 
 ## Appendix
