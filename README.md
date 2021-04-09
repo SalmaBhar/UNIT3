@@ -46,7 +46,7 @@ This is the Home Login Screen and Register Screen of the app. <br>
 **Fig. 3:** Login and Register Screens <br>
 <br>
 This is the Diary Entries Screen which allows the user to enter their journal entries after they have logged-in. <br>
-![alt text]() <br>
+![alt text](entryscreen.png) <br>
 **Fig. 4:** Diary entries Screens <br>
 <br>
 The following are the 2 database tables with some data in them. The app allows us to write and read from them using the sign-in/register and diary entry functions. <br>
