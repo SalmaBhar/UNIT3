@@ -6,7 +6,7 @@ Many people like to keep diaries to document important events of their lives. Ho
 
 [1] Adminassistance. “What Type Of Diary Is Better To Use?” Admin Assistance, 16 Sept. 2020, www.adminassistance.co.uk/diaries-online-vs-paperback.  <br>
 
-To support this idea, I received the following request from my roomate asking about an app to record her diary entries since her physical journal is taking too much space in her small dorm room. The screenshot of this conversation is found below: <br>
+To support this idea, I received a request from my roomate asking about an app to record her diary entries since her physical journal is taking too much space in her small dorm room (see appendix). <br>
 
 ### Justification of the solution
 We will create an app program using Python as a programming language on the programming software PyCharm that is available by our school. We will be using the open source KivyMD in order to build our app interface and components. In fact, KivyMD is one of the most useful sources that makes app development on Python much easier and efficient [2]. We will also use SQL programming language to build 2 databases for the app: a database to store the user's account information and a database to store the journal entries of each user. The app will have 4 main screens: a registration screen, login screen, diary entries screen and a diary entries view screen. <br>
@@ -35,23 +35,23 @@ S-Scheduling- Can the project be done in time? We are given 3 weeks to complete 
 ### Initial Sketches
 I started by making some initial sketches of each screen of the app. It shows the components and its location on each screen. These sketches will be later used as a refrence when coding the app's screens. <br>
 ![alt text](sketchesapp.jpg) <br>
-**Fig. 2:** Initial Paper Sketches of the App <br>
+**Fig. 1:** Initial Paper Sketches of the App <br>
 <br>
 The app contains 2 database tables: the users table to store the users' accounts information and the diary table to store the diary entries of each user. These are the Entity Relationships (ER) diagrams for the 2 database tables of the app. <br>
 ![alt text](erapp.jpg) <br>
-**Fig. 3:** ER Diagrams of our 2 database tables <br>
+**Fig. 2:** ER Diagrams of our 2 database tables <br>
 ### User Interface
 This is the Home Login Screen and Register Screen of the app. <br>
 ![alt text](loginregisterscreen.png) <br>
-**Fig. 4:** Login and Register Screens <br>
+**Fig. 3:** Login and Register Screens <br>
 <br>
 This is the Diary Entries Screen which allows the user to enter their journal entries after they have logged-in. <br>
 ![alt text](entryscreen.png) <br>
-**Fig. 5:** Diary entries Screen <br>
+**Fig. 4:** Diary entries Screen <br>
 <br>
 The following are the 2 database tables with some data in them. The app allows us to write and read from them using the sign-in/register and diary entry functions. <br>
 ![alt text](databasetables.png) <br>
-**Fig. 6:** 2 database tables of the app <br>
+**Fig. 5:** 2 database tables of the app <br>
 ## Criteria C: Development
 We ended up with the following Python code which will be run on PyCharm: <br>
 ```py
@@ -372,4 +372,4 @@ The app functions pretty well. The database portion is functionning successfully
 
 ## Appendix
 ![alt text](screenshot.jpg) <br> 
-**Fig. 1:** Customer requests conversation proof <br>
+**Fig. 6:** Customer requests conversation proof <br>
