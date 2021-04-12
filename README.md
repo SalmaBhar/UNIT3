@@ -133,11 +133,15 @@ As a reminder, this is the criteria for success of this app: <br>
 - Crit.3. The product contains a register feature. --> You can enter an email and password in the allocated fields and your account gets added to the users database when you click the "register" button. --> PASSED <br>
 - Crit.4.The product should have a pink theme. --> The app's theme has been set at the colour pink which is visible in the background and buttons. --> PASSED <br>
 ### 2. Beta Testing:
-
+I asked my roomate, Aditi, who is the person who requested the app to use the app and test the same 4 criterias. She got the same results as in the alpha testing. I also received some feedback which I will copy paste here: "FEEDBACK"
 ### 3. Unit Testing:
-
+1. Sign-in/ Register feature <br>
+Test 1: putting the wrong password for an already registered username in the login field --> fails to login <br>
+Test 2: register an account then put the same username and password in the login page --> success to login <br>
+2. Diary feature: <br>
+Test 1: entering a new diary entry then checking the diary table --> the entry appears in the diary table <br>
 ### 4. Personal Reflection:
-The app functions pretty well. The database portion is functionning successfully. When you register, it writes your email and associated password in the users database table so that next time when you sign-in, it checks that your account information is available and links you to the diary screen. The diary screen allows you to enter a journal entry with the date associated. However, I struggled to make the entries appear in another screen. The only way to access previous entries is to look at the diary database table which is quite inconvenient and has to be improved. Overall, the success criteria has been met although the app might need some improvements. It is generally a good introduction and practise of app development using KivyMD.
+The app functions pretty well. The database portion is functionning successfully. When you register, it writes your email and associated password in the users database table so that next time when you sign-in, it checks that your account information is available and links you to the diary screen. The diary screen allows you to enter a journal entry with the date associated. However, I struggled to make the entries appear in another screen. The only way to access previous entries is to look at the diary database table which is quite inconvenient and has to be improved. Overall, the success criteria has been met although the app might need some improvements. It has been generally to me a good introduction and practise of app development using KivyMD.
 
 ## Appendix
 ![alt text](screenshot.jpg) <br> 
